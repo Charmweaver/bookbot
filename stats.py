@@ -12,4 +12,17 @@ def count_letters(contents):
 
     return result
 
+def sort_on(dict):
+    return dict["num"]
 
+def sorted_count_letters(letters):
+    results = []
+    for letter in letters:
+        if letter.isalpha():
+            dict = {}
+            dict["char"] = letter
+            dict["num"] = letters[letter]
+            results.append(dict)
+    results.sort(reverse=True, key=sort_on)
+    return results
+    
